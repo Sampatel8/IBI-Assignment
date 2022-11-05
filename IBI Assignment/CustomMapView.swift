@@ -23,30 +23,36 @@ class CustomAnnotation: NSObject, MKAnnotation {
 
 struct CustomMapView: View {
     
+    @Binding var isDismiss: Bool
+    @State var isShowDetailView: Bool = false
+    @State var defaultString: String = "Default description"
+    
     @State private var region = MKCoordinateRegion(
-        // Apple Park
         center: CLLocationCoordinate2D(latitude: 43.655967377723734, longitude: -79.3863245844841),
         span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
     )
     @ObservedObject var service = APISerive.shared
     
     var body: some View {
-        MapView(region: region, lineCoordinates: service.polylineDataList, annotationList: service.annotaionList)
-            .edgesIgnoringSafeArea(.all)
+        ZStack{
+            MapView(region: region, lineCoordinates: service.polylineDataList, annotationList: service.annotaionList, isShowDetailView: $isShowDetailView, pinDescription: $defaultString)
+                .edgesIgnoringSafeArea(.all)
+            
+            if isShowDetailView{
+                DetailView(isDismiss: $isDismiss, desciprion: defaultString)
+            }
+        }
     }
 }
 
-struct CustomMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomMapView()
-    }
-}
 
 struct MapView: UIViewRepresentable {
     
     let region: MKCoordinateRegion
     let lineCoordinates: [CLLocationCoordinate2D]
     let annotationList: [CustomAnnotation]
+    @Binding var isShowDetailView: Bool
+    @Binding var pinDescription: String
     
     
     func makeUIView(context: Context) -> MKMapView {
@@ -68,16 +74,20 @@ struct MapView: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(self, $isShowDetailView, $pinDescription)
     }
     
 }
 
 class Coordinator: NSObject, MKMapViewDelegate {
     var parent: MapView
+    @Binding var isShowDetailView: Bool
+    @Binding var pinDescription: String
     
-    init(_ parent: MapView) {
+    init(_ parent: MapView, _ isShowDetailView: Binding<Bool>, _ pinDescription: Binding<String>) {
         self.parent = parent
+        self._isShowDetailView = isShowDetailView
+        self._pinDescription = pinDescription
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -88,5 +98,17 @@ class Coordinator: NSObject, MKMapViewDelegate {
             return renderer
         }
         return MKOverlayRenderer()
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        $isShowDetailView.wrappedValue.toggle()
+        if let annotationView = view.annotation as? CustomAnnotation{
+            if let description = annotationView.customDescription{
+                pinDescription = description
+            }else{
+                pinDescription = "Description is not available"
+            }
+        }
+        
     }
 }

@@ -8,47 +8,35 @@
 import SwiftUI
 
 struct DetailView: View {
+    
+    @Binding var isDismiss: Bool
+    var desciprion: String
+    @State private var showingAlert = false
+    
     var body: some View {
-        VStack{
+        VStack {
             Spacer()
-            Text("Desciprion")
+            Text(desciprion)
                 .font(.title)
                 .padding()
-            
-            Text("You want go to home page")
             HStack{
                 Spacer()
-                Button {
-                    // No Action Defined.
-                } label: {
-                    Text("Yes")
-                        .bold()
-                        .frame(width: 100, height: 50)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(15)
-                        .padding()
-                }
-                Button {
-                    // No action defined.
-                } label: {
-                    Text("No")
-                        .bold()
-                        .frame(width: 100, height: 50)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(15)
-                        .padding()
-                }
+                Button("Home page") {
+                    showingAlert = true
+                }.bold()
+                    .frame(width: 240, height: 50)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
                 Spacer()
             }
             Spacer()
-        }
+        }.background(Color.white)
+            .alert(isPresented:$showingAlert){
+                Alert(title: Text("Attention"), message: Text("Do you want to go back"), primaryButton: .default(Text("Yes"), action: {
+                    isDismiss = false
+                }), secondaryButton: .destructive(Text("No")))
+            }
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView()
-    }
-}

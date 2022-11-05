@@ -11,8 +11,7 @@ import SwiftUI
 struct IBI_AssignmentApp: App {
     var body: some Scene {
         WindowGroup {
-            //FirstView()
-            CustomMapView()
+            FirstView()
         }
     }
 }

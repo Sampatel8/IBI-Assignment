@@ -8,20 +8,29 @@
 import SwiftUI
 
 struct FirstView: View {
+    
+    @State var isShowCustomMapView = false
+    
     var body: some View {
-        VStack{
-            Text("Welcome")
-                .bold()
-                .font(.title)
-                .padding()
+        ZStack {
+            VStack{
+                Text("Welcome")
+                    .bold()
+                    .font(.title)
+                    .padding()
+                
+                Button("Map View") {
+                    isShowCustomMapView.toggle()
+                }.bold()
+                    .frame(width: 240, height: 50)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
             
-            Button("Map View") {
-                // Action For MapView Button
-            }.bold()
-                .frame(width: 240, height: 50)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+            if isShowCustomMapView {
+                CustomMapView(isDismiss: $isShowCustomMapView)
+            }
         }
     }
 }
