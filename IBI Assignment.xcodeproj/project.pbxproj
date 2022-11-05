@@ -13,6 +13,7 @@
 		25B942CB29170209007475DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B942CA29170209007475DE /* Preview Assets.xcassets */; };
 		25B942D229170477007475DE /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B942D129170477007475DE /* CustomMapView.swift */; };
 		25B942D429170619007475DE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B942D329170619007475DE /* DetailView.swift */; };
+		25B942D629170AE8007475DE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B942D529170AE8007475DE /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		25B942CA29170209007475DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		25B942D129170477007475DE /* CustomMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
 		25B942D329170619007475DE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		25B942D529170AE8007475DE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				25B942C529170204007475DE /* FirstView.swift */,
 				25B942D129170477007475DE /* CustomMapView.swift */,
 				25B942D329170619007475DE /* DetailView.swift */,
+				25B942D529170AE8007475DE /* APIService.swift */,
 				25B942C729170209007475DE /* Assets.xcassets */,
 				25B942C929170209007475DE /* Preview Content */,
 			);
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25B942D229170477007475DE /* CustomMapView.swift in Sources */,
+				25B942D629170AE8007475DE /* APIService.swift in Sources */,
 				25B942D429170619007475DE /* DetailView.swift in Sources */,
 				25B942C629170204007475DE /* FirstView.swift in Sources */,
 				25B942C429170204007475DE /* IBI_AssignmentApp.swift in Sources */,
