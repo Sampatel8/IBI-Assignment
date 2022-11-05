@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		25B942C429170204007475DE /* IBI_AssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B942C329170204007475DE /* IBI_AssignmentApp.swift */; };
-		25B942C629170204007475DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B942C529170204007475DE /* ContentView.swift */; };
+		25B942C629170204007475DE /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B942C529170204007475DE /* FirstView.swift */; };
 		25B942C829170209007475DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B942C729170209007475DE /* Assets.xcassets */; };
 		25B942CB29170209007475DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B942CA29170209007475DE /* Preview Assets.xcassets */; };
+		25B942D229170477007475DE /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B942D129170477007475DE /* CustomMapView.swift */; };
+		25B942D429170619007475DE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B942D329170619007475DE /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		25B942C029170204007475DE /* IBI Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IBI Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B942C329170204007475DE /* IBI_AssignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBI_AssignmentApp.swift; sourceTree = "<group>"; };
-		25B942C529170204007475DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		25B942C529170204007475DE /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		25B942C729170209007475DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25B942CA29170209007475DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		25B942D129170477007475DE /* CustomMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
+		25B942D329170619007475DE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				25B942C329170204007475DE /* IBI_AssignmentApp.swift */,
-				25B942C529170204007475DE /* ContentView.swift */,
+				25B942C529170204007475DE /* FirstView.swift */,
+				25B942D129170477007475DE /* CustomMapView.swift */,
+				25B942D329170619007475DE /* DetailView.swift */,
 				25B942C729170209007475DE /* Assets.xcassets */,
 				25B942C929170209007475DE /* Preview Content */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25B942C629170204007475DE /* ContentView.swift in Sources */,
+				25B942D229170477007475DE /* CustomMapView.swift in Sources */,
+				25B942D429170619007475DE /* DetailView.swift in Sources */,
+				25B942C629170204007475DE /* FirstView.swift in Sources */,
 				25B942C429170204007475DE /* IBI_AssignmentApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

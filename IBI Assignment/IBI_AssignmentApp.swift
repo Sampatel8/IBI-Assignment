@@ -11,7 +11,7 @@ import SwiftUI
 struct IBI_AssignmentApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FirstView()
         }
     }
 }
